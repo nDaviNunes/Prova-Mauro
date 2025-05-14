@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparação para Prova - IFMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #00bf63;
+            --primary-dark: #009e52;
+            --primary-light: #e6fff2;
+            --secondary: #2d3436;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #eeeeee;
+            --gray-300: #e0e0e0;
+            --gray-600: #757575;
+            --gray-800: #424242;
+            --gradient: linear-gradient(135deg, #00bf63 0%, #00d68f 100%);
+            --gradient-hover: linear-gradient(135deg, #00d68f 0%, #00bf63 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--gray-50);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--gradient);
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="none"/><circle cx="3" cy="3" r="1" fill="rgba(255,255,255,0.2)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .header img {
+            height: 70px;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
+        }
+
+        .header img:hover {
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -2rem auto 2rem;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            color: var(--gray-600);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .exam-info {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            padding: 1rem 1.5rem;
+            background: var(--primary-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            color: var(--gray-800);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: var(--gray-50);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light);
+            background: var(--white);
+        }
+
+        button {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-hover);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        button:hover::after {
+            opacity: 1;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,191,99,0.4);
+        }
+
+        button:disabled {
+            background: var(--gray-300);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .question-card {
+            background: linear-gradient(to bottom right, var(--primary-light), #ffffff);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: none;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0,191,99,0.15);
+        }
+
+        .question-card::before {
+            content: '?';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .conteudo-header {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0,191,99,0.1);
+        }
+
+        .questao-principal {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(0,191,99,0.2);
+            text-align: left;
+        }
+
+        .sub-questao {
+            margin: 2.5rem 0;
+            padding: 1.8rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,191,99,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,191,99,0.1);
+        }
+
+        .sub-questao:hover {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 8px 20px rgba(0,191,99,0.12);
+            transform: translateY(-2px);
+        }
+
+        .sub-questao-letra {
+            font-weight: 600;
+            color: var(--primary);
+            margin-right: 1.2rem;
+            font-size: 1.3rem;
+            background: var(--primary-light);
+            padding: 0.4rem 1rem;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0,191,99,0.15);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            color: var(--gray-800);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+
+        .resposta-input {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid var(--primary-light);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+            margin-top: 1.5rem;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .resposta-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px var(--primary-light), inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .resposta-input::placeholder {
+            color: var(--gray-600);
+            opacity: 0.7;
+        }
+
+        .feedback {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .feedback.correto {
+            background: rgba(0,191,99,0.1);
+            border: 1px solid rgba(0,191,99,0.2);
+        }
+
+        .feedback.incorreto {
+            background: rgba(255,82,82,0.1);
+            border: 1px solid rgba(255,82,82,0.2);
+        }
+
+        .feedback div {
+            margin: 0.8rem 0;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.8);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .question-counter {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,191,99,0.3);
+        }
+
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+                margin-top: -2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+
+            .question-counter {
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+
+            .navegacao {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+                padding: 1rem 2rem;
+            }
+
+            .question-card {
+                padding: 1.2rem;
+                margin: 1rem 0;
+                border-radius: 15px;
+            }
+
+            .conteudo-header {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+                padding: 0.8rem;
+                border-left-width: 3px;
+            }
+
+            .questao-principal {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.8rem;
+            }
+
+            .sub-questao {
+                padding: 1rem;
+                margin: 1rem 0;
+                border-radius: 10px;
+            }
+
+            .sub-questao-letra {
+                font-size: 1rem;
+                padding: 0.3rem 0.8rem;
+                margin-right: 0.8rem;
+                margin-bottom: 0.5rem;
+                display: inline-block;
+            }
+
+            .resposta-input {
+                padding: 0.8rem;
+                font-size: 1rem;
+                margin-top: 1rem;
+                border-radius: 8px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .button-group button {
+                width: 100%;
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            .feedback {
+                padding: 1rem;
+                margin-top: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .feedback div {
+                margin: 0.5rem 0;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .navegacao {
+                flex-direction: column;
+                gap: 0.8rem;
+                margin-top: 1.5rem;
+            }
+
+            .navegacao button {
+                width: 100%;
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+
+            .question-counter {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* Ajustes específicos para telas muito pequenas */
+        @media (max-width: 360px) {
+            .conteudo-header {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+            }
+
+            .questao-principal {
+                font-size: 1rem;
+            }
+
+            .sub-questao {
+                padding: 0.8rem;
+            }
+
+            .sub-questao-letra {
+                font-size: 0.9rem;
+                padding: 0.2rem 0.6rem;
+            }
+
+            .resposta-input {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+
+            .button-group button,
+            .navegacao button {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animações */
+        .animate__animated {
+            animation-duration: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .tela-questoes {
+            display: none;
+        }
+
+        /* Adicionando estilos para o balão de vídeo */
+        .video-balloon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 3px solid var(--primary);
+        }
+
+        .video-balloon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .video-balloon.expanded {
+            width: 600px;
+            height: 500px;
+            border-radius: 20px;
+        }
+
+        .video-balloon video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .video-balloon {
+                width: 180px;
+                height: 180px;
+            }
+
+            .video-balloon.expanded {
+                width: 90vw;
+                height: 400px;
+                right: 5vw;
+                bottom: 40px;
+            }
+        }
+
+        /* Botão de fechar para o vídeo expandido */
+        .close-video {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 0;
+        }
+
+        .video-balloon.expanded .close-video {
+            display: flex;
+        }
+
+        /* Melhorar o estilo da assinatura */
+        .signature-watermark {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: var(--gray-600);
+            opacity: 0.9;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .signature-watermark:hover {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
+            background: linear-gradient(135deg, var(--primary-light), rgba(255, 255, 255, 0.3));
+            border-color: var(--primary-light);
+            color: var(--primary-dark);
+            box-shadow: 0 8px 25px rgba(0,191,99,0.2);
+        }
+
+        .signature-watermark img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Estilo para o botão de voltar */
+        .btn-voltar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--white);
+            color: var(--secondary);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .btn-voltar:hover {
+            transform: translateX(-3px);
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            box-shadow: 0 6px 20px rgba(0,191,99,0.15);
+        }
+
+        .btn-voltar::before {
+            content: '←';
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .signature-watermark {
+                bottom: 10px;
+                font-size: 0.9rem;
+                padding: 6px 15px;
+            }
+
+            .btn-voltar {
+                top: 10px;
+                left: 10px;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .navegacao button {
+            opacity: 1;
+            cursor: pointer;
+        }
+        .navegacao button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: var(--gray-300);
+        }
+        .navegacao button:not(:disabled):hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,191,99,0.4);
+        }
+
+        .feedback.incorreto div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feedback.incorreto div::after {
+            content: "⚠️ Verifique também outras formas equivalentes de representação";
+            font-size: 0.85em;
+            color: #856404;
+            background: rgba(255, 193, 7, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-left: auto;
+        }
+
+        .aviso-importante {
+            margin-top: 10px;
+            padding: 12px;
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #856404;
+        }
+
+        /* Adicionar CSS para as opções de múltipla escolha */
+        .opcao-multipla {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .opcao-multipla:hover {
+            background: var(--primary-light);
+        }
+
+        .opcao-multipla input[type="radio"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .opcao-multipla label {
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--gray-800);
+            margin: 0;
+        }
+
+        /* Adicionar CSS para o checkbox customizado */
+        .checkbox-custom {
+            display: inline-block;
+            width: 30px;
+            margin-right: 10px;
+            font-family: monospace;
+        }
+
+        input[type="radio"]:checked + label .checkbox-custom {
+            content: "(x)";
+        }
+
+        /* Estilos para o botão e modal das provas */
+        .btn-prova-original {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .btn-prova-original:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .modal-provas {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .modal-provas.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 90%;
+            width: 1200px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--secondary);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            font-size: 1.2rem;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        .prova-image {
+            max-width: 100%;
+            height: auto;
+            margin: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .prova-image:hover {
+            transform: scale(1.02);
+        }
+
+        .provas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .prova-card {
+            background: var(--gray-50);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .prova-card h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .download-link {
+            color: var(--primary-dark);
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .download-link:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .btn-prova-original {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .modal-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signature-watermark">
+        <img src="https://avatars.githubusercontent.com/u/your-username" alt="Davi" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\'%3E%3Cpath fill=\'%2300bf63\' d=\'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z\'/%3E%3C/svg%3E';">
+        <span>Desenvolvido por Davi Nunes</span>
+    </div>
+    <!-- Adicionando o balão de vídeo -->
+    <div class="video-balloon" onclick="toggleVideo(this)">
+        <video loop muted autoplay playsinline>
+            <source src="Vídeo do WhatsApp de 2025-05-13 à(s) 19.37.44_4b5f89ef.mp4" type="video/mp4">
+        </video>
+        <button class="close-video" onclick="event.stopPropagation(); toggleVideo(this.parentElement)">×</button>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <img src="https://www.ifms.edu.br/marcaifms.png" alt="Logo IFMS" class="animate__animated animate__fadeIn">
+            <h1 class="animate__animated animate__fadeInDown">Sistema de Preparação para Prova</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Tela Inicial -->
+        <div class="tela-inicial card animate__animated animate__fadeInUp" id="telaInicial">
+            <h2>Bem-vindo ao Sistema de Estudos</h2>
+            <p class="subtitle">Prepare-se para sua avaliação de forma interativa e eficiente</p>
+            <p class="exam-info">📚 Questões retiradas das provas passadas</p>
+            
+            <div class="provas-buttons animate__animated animate__fadeIn" style="margin-bottom: 2rem;">
+                <button onclick="abrirModalProvas()" class="btn-prova-original">
+                    <span style="margin-right: 8px;">📄</span> Ver prova original
+                </button>
+                <div class="download-links" style="margin-top: 1rem; font-size: 0.9rem;">
+                    <a href="frente.jpg" download="frente.jpg" class="download-link">
+                        ⬇️ Baixar Frente
+                    </a>
+                    <span style="margin: 0 10px;">|</span>
+                    <a href="verso.jpg" download="verso.jpg" class="download-link">
+                        ⬇️ Baixar Verso
+                    </a>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="nome">Como podemos te chamar?</label>
+                <input type="text" 
+                       id="nome" 
+                       placeholder="Digite seu nome"
+                       autocomplete="off"
+                       class="animate__animated animate__fadeIn">
+            </div>
+            
+            <button onclick="comecar()" class="pulse">Iniciar Preparação</button>
+        </div>
+
+        <!-- Tela de Questões -->
+        <div class="tela-questoes" id="telaQuestoes">
+            <button onclick="voltarParaInicio()" class="btn-voltar animate__animated animate__fadeIn">
+                Voltar para início
+            </button>
+            <div class="card animate__animated animate__fadeInUp">
+                <div class="question-header">
+                    <h2>Olá, <span id="nomeAluno"></span>!</h2>
+                    <span class="question-counter animate__animated animate__fadeIn">
+                        Questão <span id="numeroQuestao">1</span> de 6
+                    </span>
+                    <button onclick="abrirModalProvas()" class="btn-prova-original animate__animated animate__fadeIn">
+                        Ver prova original
+                    </button>
+                </div>
+
+                <div class="question-card animate__animated animate__fadeIn">
+                    <div class="conteudo-header">
+                        <div id="questaoConteudo"></div>
+                        <div class="aviso-importante">
+                            <strong>⚠️ Observação Importante:</strong> Este é um algoritmo automatizado para geração e correção de questões. 
+                            Como as operações com números complexos podem ter diferentes formas de representação equivalentes, 
+                            o gabarito automático pode apresentar variações. Em caso de dúvida sobre sua resposta, 
+                            recomenda-se resolver o exercício passo a passo e consultar o professor para confirmação do resultado correto.
+                        </div>
+                    </div>
+                    <div class="questao-principal" id="questaoEnunciado"></div>
+                    <div id="subQuestoes"></div>
+                </div>
+
+                <div class="question-card animate__animated animate__fadeIn">
+                    <p class="question-text" id="questaoAtual"></p>
+                    <div id="feedback"></div>
+                    <div class="button-group">
+                        <button onclick="verificarResposta()" class="animate__animated animate__fadeIn">
+                            Verificar Respostas
+                        </button>
+                        <button onclick="novaVariacao()" class="btn-secondary animate__animated animate__fadeIn">
+                            Nova Variação
+                        </button>
+                    </div>
+                </div>
+
+                <div class="navegacao">
+                    <button onclick="questaoAnterior()" 
+                            id="btnAnterior" 
+                            class="btn-secondary animate__animated animate__fadeIn">
+                        Anterior
+                    </button>
+                    <button onclick="proximaQuestao()" 
+                            id="btnProxima"
+                            class="animate__animated animate__fadeIn">
+                        Próxima
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal das Provas -->
+    <div class="modal-provas" id="modalProvas">
+        <div class="modal-content">
+            <button class="modal-close" onclick="fecharModalProvas()">×</button>
+            <h2>Prova Original</h2>
+            <div class="provas-container">
+                <div class="prova-card">
+                    <h3>Frente da Prova</h3>
+                    <img src="frente.jpg" 
+                         alt="Frente da Prova" 
+                         class="prova-image"
+                         onclick="abrirImagemCompleta(this.src)">
+                </div>
+                <div class="prova-card">
+                    <h3>Verso da Prova</h3>
+                    <img src="verso.jpg" 
+                         alt="Verso da Prova" 
+                         class="prova-image"
+                         onclick="abrirImagemCompleta(this.src)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let questoes = [
+            {
+                conteudo: 'Conteúdo: Operações com números complexos na forma trigonométrica',
+                enunciado: '1) Efetue as seguintes operações:',
+                subQuestoes: [
+                    {
+                        letra: 'a)',
+                        enunciado: 'z₁ = 4(cos 11π/3 + i sen 11π/3) e z₂ = 13(cos 5π/6 + i sen 5π/6). Calcule z₁ * z₂',
+                        resposta: '52i',
+                        gerarVariacao: function() {
+                            const modulo1 = Math.floor(Math.random() * 13) + 2;
+                            const modulo2 = Math.floor(Math.random() * 13) + 2;
+                            const angulos = [
+                                ['π/6', 'π/3', 'π/2', '2π/3', '5π/6', 'π'],
+                                ['7π/6', '4π/3', '3π/2', '5π/3', '11π/6', '2π']
+                            ];
+                            const ang1Index = Math.floor(Math.random() * angulos[0].length);
+                            const ang2Index = Math.floor(Math.random() * angulos[1].length);
+                            const angulo1 = angulos[0][ang1Index];
+                            const angulo2 = angulos[1][ang2Index];
+                            const moduloResultado = modulo1 * modulo2;
+                            
+                            // Gera diferentes formatos de resposta
+                            const formatosResposta = [
+                                `${moduloResultado}i`,
+                                `${moduloResultado/2}√4i`,
+                                `${moduloResultado}(cos π/2 + i sen π/2)`,
+                                `${moduloResultado}e^(iπ/2)`
+                            ];
+                            const formatoEscolhido = formatosResposta[Math.floor(Math.random() * formatosResposta.length)];
+                            
+                            return {
+                                enunciado: `z₁ = ${modulo1}(cos ${angulo1} + i sen ${angulo1}) e z₂ = ${modulo2}(cos ${angulo2} + i sen ${angulo2}). Calcule z₁ * z₂`,
+                                resposta: formatoEscolhido
+                            };
+                        }
+                    },
+                    {
+                        letra: 'b)',
+                        enunciado: 'z₁ = 48(cos 3π/4 + i sen 3π/4) e z₂ = 3(cos π/4 + i sen π/4). Calcule z₁ / z₂',
+                        resposta: '16i',
+                        gerarVariacao: function() {
+                            const modulo2 = Math.floor(Math.random() * 8) + 2;
+                            const modulo1 = modulo2 * (Math.floor(Math.random() * 8) + 2);
+                            const angulos = ['π/4', 'π/2', '3π/4', 'π'];
+                            const angulo1 = angulos[Math.floor(Math.random() * angulos.length)];
+                            const angulo2 = angulos[Math.floor(Math.random() * angulos.length)];
+                            const moduloResultado = modulo1 / modulo2;
+                            
+                            // Gera diferentes formatos de resposta
+                            const formatosResposta = [
+                                `${moduloResultado}i`,
+                                `${moduloResultado/2}√4i`,
+                                `${moduloResultado}(cos π/2 + i sen π/2)`,
+                                `${moduloResultado}e^(iπ/2)`
+                            ];
+                            const formatoEscolhido = formatosResposta[Math.floor(Math.random() * formatosResposta.length)];
+                            
+                            return {
+                                enunciado: `z₁ = ${modulo1}(cos ${angulo1} + i sen ${angulo1}) e z₂ = ${modulo2}(cos ${angulo2} + i sen ${angulo2}). Calcule z₁ / z₂`,
+                                resposta: formatoEscolhido
+                            };
+                        }
+                    },
+                    {
+                        letra: 'c)',
+                        enunciado: 'z₁ = 5(cos π/6 + i sen π/6) e z₂ = 3(cos π/3 + i sen π/3). Calcule z₁ + z₂',
+                        resposta: '(5√3/2 + 3) + (5 + 3√3/2)i',
+                        gerarVariacao: function() {
+                            const modulo1 = Math.floor(Math.random() * 8) + 2;
+                            const modulo2 = Math.floor(Math.random() * 8) + 2;
+                            const angulos = ['π/6', 'π/4', 'π/3', 'π/2'];
+                            const angulo1 = angulos[Math.floor(Math.random() * angulos.length)];
+                            const angulo2 = angulos[Math.floor(Math.random() * angulos.length)];
+                            
+                            // Gera diferentes formatos de resposta para soma
+                            const formatosResposta = [
+                                `${modulo1}√3/2 + ${modulo2} + (${modulo1} + ${modulo2}√3/2)i`,
+                                `${modulo1 + modulo2}(cos ${angulo1} + i sen ${angulo1})`,
+                                `${modulo1}e^(i${angulo1}) + ${modulo2}e^(i${angulo2})`,
+                                `${Math.sqrt(modulo1*modulo1 + modulo2*modulo2)}∠${angulo1}`
+                            ];
+                            const formatoEscolhido = formatosResposta[Math.floor(Math.random() * formatosResposta.length)];
+                            
+                            return {
+                                enunciado: `z₁ = ${modulo1}(cos ${angulo1} + i sen ${angulo1}) e z₂ = ${modulo2}(cos ${angulo2} + i sen ${angulo2}). Calcule z₁ + z₂`,
+                                resposta: formatoEscolhido
+                            };
+                        }
+                    },
+                    {
+                        letra: 'd)',
+                        enunciado: 'z₁ = 8(cos π/4 + i sen π/4) e z₂ = 4(cos π/6 + i sen π/6). Calcule z₁ - z₂',
+                        resposta: '(4√2 - 2√3) + (4√2 - 2)i',
+                        gerarVariacao: function() {
+                            const modulo1 = Math.floor(Math.random() * 8) + 5;
+                            const modulo2 = Math.floor(Math.random() * 4) + 2;
+                            const angulos = ['π/6', 'π/4', 'π/3', 'π/2'];
+                            const angulo1 = angulos[Math.floor(Math.random() * angulos.length)];
+                            const angulo2 = angulos[Math.floor(Math.random() * angulos.length)];
+                            
+                            // Gera diferentes formatos de resposta para subtração
+                            const formatosResposta = [
+                                `(${modulo1}√2 - ${modulo2}√3) + (${modulo1}√2 - ${modulo2})i`,
+                                `${modulo1}(cos ${angulo1} + i sen ${angulo1}) - ${modulo2}(cos ${angulo2} + i sen ${angulo2})`,
+                                `${modulo1}e^(i${angulo1}) - ${modulo2}e^(i${angulo2})`,
+                                `${Math.sqrt(Math.abs(modulo1*modulo1 - modulo2*modulo2))}∠${angulo1}`
+                            ];
+                            const formatoEscolhido = formatosResposta[Math.floor(Math.random() * formatosResposta.length)];
+                            
+                            return {
+                                enunciado: `z₁ = ${modulo1}(cos ${angulo1} + i sen ${angulo1}) e z₂ = ${modulo2}(cos ${angulo2} + i sen ${angulo2}). Calcule z₁ - z₂`,
+                                resposta: formatoEscolhido
+                            };
+                        }
+                    }
+                ]
+            },
+            {
+                conteudo: 'Conteúdo: Divisão de Polinômios',
+                enunciado: 'Dividindo o polinômio p(x) por q(x), obtemos o quociente e resto indicados. Determine q(x):',
+                subQuestoes: [
+                    {
+                        letra: 'a)',
+                        enunciado: 'p(x) = x³ + x² + x + 1, s(x) = 1 + x (quociente) e r(x) = x + 1 (resto)',
+                        resposta: 'x² - x + 1',
+                        gerarVariacao: function() {
+                            const variacoes = [
+                                {
+                                    p: 'x³ + x² + x + 1',
+                                    s: '1 + x',
+                                    r: 'x + 1',
+                                    q: 'x² - x + 1',
+                                    explicacao: 'p(x) = q(x)s(x) + r(x) = (x² - x + 1)(1 + x) + (x + 1) = x³ + x² + x + 1'
+                                }
+                            ];
+                            
+                            return {
+                                enunciado: `p(x) = ${variacoes[0].p}, s(x) = ${variacoes[0].s} (quociente) e r(x) = ${variacoes[0].r} (resto)`,
+                                resposta: variacoes[0].q
+                            };
+                        }
+                    }
+                ]
+            },
+            {
+                conteudo: 'Conteúdo: Teorema do Resto',
+                enunciado: 'Calcule o Quociente e o resto da divisão:',
+                polinomioAtual: null,
+                subQuestoes: [
+                    {
+                        letra: 'a)',
+                        enunciado: 'Para P(x) = x⁷ + 3x⁶ - 2x³ - 3x³ - x + 1 e G(x) = x⁴ - x + 1, determine o quociente Q(x) da divisão',
+                        resposta: 'x³ + 3x²',
+                        gerarVariacao: function() {
+                            const polinomios = [
+                                {
+                                    P: 'x⁷ + 3x⁶ - 5x³ - x + 1',
+                                    G: 'x⁴ - x + 1',
+                                    Q: 'x³ + 3x² + 3x + 2',
+                                    R: '2x³ - 3x² + x - 1'
+                                },
+                                {
+                                    P: 'x⁷ + 2x⁶ - 3x³ - x + 2',
+                                    G: 'x⁴ - x + 1',
+                                    Q: 'x³ + 2x² + 2x + 1',
+                                    R: 'x³ - 2x² + 2x + 1'
+                                },
+                                {
+                                    P: 'x⁷ + 4x⁶ - 6x³ - x + 3',
+                                    G: 'x⁴ - x + 1',
+                                    Q: 'x³ + 4x² + 4x + 3',
+                                    R: '3x³ - 4x² + 2x - 1'
+                                },
+                                {
+                                    P: 'x⁷ + 5x⁶ - 4x³ - x + 2',
+                                    G: 'x⁴ - x + 1',
+                                    Q: 'x³ + 5x² + 5x + 4',
+                                    R: '4x³ - 3x² + x - 2'
+                                }
+                            ];
+                            
+                            const index = Math.floor(Math.random() * polinomios.length);
+                            const poli = polinomios[index];
+                            questoes[2].polinomioAtual = poli; // Armazena o polinômio atual
+                            
+                            return {
+                                enunciado: `Para P(x) = ${poli.P} e G(x) = ${poli.G}, determine o quociente Q(x) da divisão`,
+                                resposta: poli.Q
+                            };
+                        }
+                    },
+                    {
+                        letra: 'b)',
+                        enunciado: 'Para P(x) = x⁷ + 3x⁶ - 2x³ - 3x³ - x + 1 e G(x) = x⁴ - x + 1, determine o resto R(x) da divisão',
+                        resposta: '-5x³ - x + 1',
+                        gerarVariacao: function() {
+                            // Usa o mesmo polinômio da parte a)
+                            const polinomioAtual = questoes[2].polinomioAtual;
+                            if (!polinomioAtual) return {
+                                enunciado: this.enunciado,
+                                resposta: this.resposta
+                            };
+                            
+                            return {
+                                enunciado: `Para P(x) = ${polinomioAtual.P} e G(x) = ${polinomioAtual.G}, determine o resto R(x) da divisão`,
+                                resposta: polinomioAtual.R
+                            };
+                        }
+                    }
+                ]
+            },
+            {
+                conteudo: 'Conteúdo: Dispositivo de Briot-Ruffini',
+                enunciado: 'Determine o valor de p de modo que o polinômio seja divisível pelo polinômio g(x):',
+                subQuestoes: [
+                    {
+                        letra: 'a)',
+                        enunciado: 'f(x) = 3x³ + px² - (2p + 1) + (p + 3) e g(x) = x + 4',
+                        resposta: '38/3',
+                        gerarVariacao: function() {
+                            const variacoes = [
+                                {
+                                    f: '3x³ + px² - (2p + 1) + (p + 3)',
+                                    g: 'x + 4',
+                                    p: '38/3',
+                                    explicacao: 'Para x = -4: 3(-4)³ + p(-4)² - (2p + 1) + (p + 3) = -192 + 16p - 2p - 1 + p + 3 = 15p - 190 = 0 → p = 38/3'
+                                },
+                                {
+                                    f: '2x³ + px² - (2p + 3) + (p + 1)',
+                                    g: 'x + 3',
+                                    p: '7',
+                                    explicacao: 'Para x = -3: 2(-3)³ + p(-3)² - (2p + 3) + (p + 1) = -54 + 9p - 2p - 3 + p + 1 = 8p - 56 = 0 → p = 7'
+                                },
+                                {
+                                    f: '4x³ + px² - (3p + 2) + (p + 4)',
+                                    g: 'x + 2',
+                                    p: '15',
+                                    explicacao: 'Para x = -2: 4(-2)³ + p(-2)² - (3p + 2) + (p + 4) = -32 + 4p - 3p - 2 + p + 4 = 2p - 30 = 0 → p = 15'
+                                },
+                                {
+                                    f: '5x³ + px² - (2p + 4) + (p + 2)',
+                                    g: 'x + 1',
+                                    p: '7',
+                                    explicacao: 'Para x = -1: 5(-1)³ + p(-1)² - (2p + 4) + (p + 2) = -5 + p - 2p - 4 + p + 2 = 0 → p = 7'
+                                }
+                            ];
+                            
+                            const index = Math.floor(Math.random() * variacoes.length);
+                            const variacao = variacoes[index];
+                            
+                            return {
+                                enunciado: `f(x) = ${variacao.f} e g(x) = ${variacao.g}`,
+                                resposta: variacao.p
+                            };
+                        }
+                    }
+                ]
+            },
+            {
+                conteudo: 'Conteúdo: Divisibilidade de Polinômios',
+                enunciado: 'Para que o polinômio seja divisível pelo divisor dado, determine os valores corretos:',
+                subQuestoes: [
+                    {
+                        letra: 'a)',
+                        enunciado: 'Para que o polinômio 2x⁴ - x³ + mx² - nx + 2 seja divisível por x² - x - 2, devemos ter:',
+                        resposta: '3',
+                        tipo: 'multipla_escolha',
+                        opcoes: [
+                            'm = 1 e n = 6',
+                            'm = -6 e n = -1',
+                            'm = 6 e n = 1',
+                            'm = -6 e n = 1',
+                            'm = 6 e n = -1'
+                        ],
+                        respostaCorreta: 3,
+                        gerarVariacao: function() {
+                            return {
+                                enunciado: 'Para que o polinômio 2x⁴ - x³ + mx² - nx + 2 seja divisível por x² - x - 2, devemos ter:',
+                                resposta: '3',
+                                opcoes: [
+                                    'm = 1 e n = 6',
+                                    'm = -6 e n = -1',
+                                    'm = 6 e n = 1',
+                                    'm = -6 e n = 1',
+                                    'm = 6 e n = -1'
+                                ]
+                            };
+                        }
+                    }
+                ]
+            }
+        ];
+
+        let questaoAtual = 1;
+        let questaoAtualObj = questoes[0];
+
+        function comecar() {
+            const nome = document.getElementById('nome').value.trim();
+            if (nome) {
+                document.getElementById('telaInicial').style.display = 'none';
+                document.getElementById('telaQuestoes').style.display = 'block';
+                document.getElementById('nomeAluno').textContent = nome;
+                atualizarQuestao();
+            }
+        }
+
+        function atualizarQuestao() {
+            document.getElementById('numeroQuestao').textContent = questaoAtual;
+            const questao = questoes[questaoAtual - 1];
+            
+            document.getElementById('questaoConteudo').textContent = questao.conteudo;
+            document.getElementById('questaoEnunciado').textContent = questao.enunciado;
+            
+            let subQuestoesHtml = '';
+            questao.subQuestoes.forEach((subQuestao, index) => {
+                subQuestoesHtml += `
+                <div class="sub-questao animate__animated animate__fadeIn">
+                    <span class="sub-questao-letra">${subQuestao.letra}</span>
+                    ${subQuestao.enunciado}
+                    ${gerarOpcoesMultiplaEscolha(subQuestao, index)}
+                </div>`;
+            });
+            
+            document.getElementById('subQuestoes').innerHTML = subQuestoesHtml;
+            document.getElementById('feedback').innerHTML = '';
+            
+            document.getElementById('btnAnterior').disabled = questaoAtual === 1;
+            document.getElementById('btnProxima').disabled = questaoAtual === questoes.length;
+
+            const questaoElement = document.getElementById('questaoAtual');
+            questaoElement.classList.add('animate__animated', 'animate__fadeIn');
+            setTimeout(() => {
+                questaoElement.classList.remove('animate__animated', 'animate__fadeIn');
+            }, 1000);
+        }
+
+        function gerarOpcoesMultiplaEscolha(subQuestao, index) {
+            if (subQuestao.tipo === 'multipla_escolha') {
+                let opcoesHtml = '<div class="opcoes-container">';
+                subQuestao.opcoes.forEach((opcao, i) => {
+                    opcoesHtml += `
+                        <div class="opcao-multipla">
+                            <input type="radio" 
+                                   id="opcao${index}_${i}" 
+                                   name="resposta${index}" 
+                                   value="${i}">
+                            <label for="opcao${index}_${i}">
+                                <span class="checkbox-custom">( )</span>
+                                ${opcao}
+                            </label>
+                        </div>
+                    `;
+                });
+                opcoesHtml += '</div>';
+                return opcoesHtml;
+            }
+            return '<input type="text" id="resposta' + index + '" class="resposta-input" placeholder="Digite sua resposta">';
+        }
+
+        function verificarResposta() {
+            const questao = questoes[questaoAtual - 1];
+            let todasRespondidas = true;
+            let todasCorretas = true;
+            let mensagem = '';
+
+            questao.subQuestoes.forEach((subQuestao, index) => {
+                if (subQuestao.tipo === 'multipla_escolha') {
+                    const respostaSelecionada = document.querySelector(`input[name="resposta${index}"]:checked`);
+                    if (!respostaSelecionada) {
+                        todasRespondidas = false;
+                        todasCorretas = false;
+                        mensagem += `<div>❌ Item ${subQuestao.letra}: Selecione uma opção</div>`;
+                    } else {
+                        const valorSelecionado = parseInt(respostaSelecionada.value);
+                        if (valorSelecionado === subQuestao.respostaCorreta) {
+                            mensagem += `<div>✅ Item ${subQuestao.letra}: Correto!</div>`;
+                        } else {
+                            todasCorretas = false;
+                            mensagem += `<div>❌ Item ${subQuestao.letra}: Incorreto. A resposta correta é: ${subQuestao.opcoes[subQuestao.respostaCorreta]}</div>`;
+                        }
+                    }
+                } else {
+                    // Lógica existente para questões de resposta texto
+                    const respostaInput = document.getElementById(`resposta${index}`);
+                    const resposta = respostaInput.value.trim().toLowerCase();
+                    if (resposta === '') {
+                        todasRespondidas = false;
+                        todasCorretas = false;
+                        respostaInput.style.borderColor = '#ff5252';
+                    } else {
+                        if (resposta === subQuestao.resposta.toLowerCase()) {
+                            respostaInput.style.borderColor = 'var(--primary)';
+                            mensagem += `<div>✅ Item ${subQuestao.letra}: Correto!</div>`;
+                        } else {
+                            respostaInput.style.borderColor = '#ff5252';
+                            mensagem += `<div>❌ Item ${subQuestao.letra}: Incorreto. A resposta é ${subQuestao.resposta}</div>`;
+                            todasCorretas = false;
+                        }
+                    }
+                }
+            });
+
+            const feedback = document.getElementById('feedback');
+            if (!todasRespondidas) {
+                feedback.innerHTML = `<div class="feedback incorreto animate__animated animate__shakeX">Por favor, responda todas as questões antes de verificar.</div>`;
+            } else if (todasCorretas) {
+                feedback.innerHTML = `<div class="feedback correto animate__animated animate__bounceIn">🎉 Parabéns! Todas as respostas estão corretas! 🎉${mensagem}</div>`;
+            } else {
+                feedback.innerHTML = `<div class="feedback incorreto animate__animated animate__fadeIn">${mensagem}</div>`;
+            }
+        }
+
+        function novaVariacao() {
+            const questao = questoes[questaoAtual - 1];
+            
+            // Gera novas variações para cada subquestão
+            questao.subQuestoes.forEach((subQuestao, index) => {
+                const novaQuestao = subQuestao.gerarVariacao();
+                subQuestao.enunciado = novaQuestao.enunciado;
+                subQuestao.resposta = novaQuestao.resposta;
+            });
+            
+            // Atualiza a exibição da questão atual
+            atualizarQuestao();
+        }
+
+        function questaoAnterior() {
+            if (questaoAtual > 1) {
+                questaoAtual--;
+                atualizarQuestao();
+            }
+        }
+
+        function proximaQuestao() {
+            if (questaoAtual < questoes.length) {
+                questaoAtual++;
+                atualizarQuestao();
+            }
+        }
+
+        // Função para expandir/recolher o vídeo
+        function toggleVideo(element) {
+            element.classList.toggle('expanded');
+            const video = element.querySelector('video');
+            
+            if (element.classList.contains('expanded')) {
+                video.controls = true;
+                video.muted = false;
+            } else {
+                video.controls = false;
+                video.muted = true;
+            }
+        }
+
+        // Funções para o modal das provas
+        function abrirModalProvas() {
+            document.getElementById('modalProvas').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharModalProvas() {
+            document.getElementById('modalProvas').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('modalProvas').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharModalProvas();
+            }
+        });
+
+        function abrirImagemCompleta(src) {
+            const win = window.open('', '_blank');
+            win.document.write(`
+                <style>
+                    body { margin: 0; background: black; height: 100vh; display: flex; align-items: center; justify-content: center; }
+                    img { max-width: 100%; max-height: 100vh; object-fit: contain; }
+                </style>
+                <img src="${src}" onclick="window.close()">
+            `);
+        }
+
+        function voltarParaInicio() {
+            document.getElementById('telaQuestoes').style.display = 'none';
+            document.getElementById('telaInicial').style.display = 'block';
+            // Limpar respostas e feedback
+            document.getElementById('feedback').innerHTML = '';
+            const respostas = document.querySelectorAll('.resposta-input');
+            respostas.forEach(resp => resp.value = '');
+            // Resetar para primeira questão
+            questaoAtual = 1;
+            atualizarQuestao();
+        }
+    </script>
+</body>
+</html> 
